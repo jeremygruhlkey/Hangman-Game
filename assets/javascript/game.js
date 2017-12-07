@@ -11,7 +11,7 @@ function gameStart() {
     // Establishes that the word has not been completed by guesses, will check against in later functions
     wordFinished = false;
     // currentWord to play gets assigned a random index from wordLibrary
-    var currentWord = wordLibrary[Math.floor(Math.random() * wordLibrary.length)];
+    currentWord = wordLibrary[Math.floor(Math.random() * wordLibrary.length)];
     
     // enters guess guessesRemaining value to <div id = #guesses-remaining>
     document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
@@ -20,29 +20,27 @@ function gameStart() {
     
     console.log(currentWord);
     console.log(currentWord.length);
-    
-    
-    
-    
 };
 
 // function checks if letter is in currentWord...
 function isLetterInWord(letter) {
     if (guessesRemaining > 0 && wordFinished != true) {
         if (currentWord.indexOf(letter) > -1) {
-            function correctGuess(letter) {
+            // function correctGuess(letter) {
                 for (var i = 0; i < currentWord.length; i++){
-                    if (letter == currentWord[i]) {
-                        var old = document.getElementById("current-word").innerHTML;
-                        var replace = old.replace(currentWord[i], letter);
-                        document.getElementById("current-word").innerHTML = replace;
+                    if (currentWord[i] == letter) {
+                        var old = document.getElementById("current-word").innerHTML.split("");
+                        console.log(old);
+                        old[i] = currentWord[i];
+                        console.log(old);
+                        document.getElementById("current-word").innerHTML = old.join("");
                     }
                     if (document.getElementById("current-word").innerHTML.indexOf("_") < 0) {
                         alert("you win!");
                         wordFinished = true;
                     }
                 }
-            }
+            // }
         }
         else {
             function incorrectGuess(letter) {
