@@ -14,61 +14,19 @@
 
 
 <body>
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-
-    <div class="page-header text-center">
-            <h1>Let's Play Hangman!</h1>
-            <h3> Press any key to begin!</h3>
-          </div>
-          
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">Current Word</div>
-                    <div class="panel-body">
-                        <div class="current-word">
-
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            
-            <div class="col-xs-12 col-sm-12 col-md-4 text-center">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Don't Hang Me!!</div>
-                        <div class="panel body">
-                                <div class="emoji">
-
-                                </div>
-                        </div>
-                    </div>
-            </div>
+    
+       <div>
+            <h3>Guess this Word!</h3>
+            <div id = "current-word"></div>
+       </div>
+       <div>
+            <h3>Guesses Remaining</h3>
+                <div id = "guesses-remaining"></div>
         </div>
-        <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading text-center">Guesses Remaining</div>
-                        <div class="panel-body">
-                            <div class="current-word">
-    
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                
-                <div class="col-xs-12 col-sm-12 col-md-8 text-center">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">Already Guessed</div>
-                            <div class="panel body">
-                                    <div class="emoji">
-    
-                                    </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
+        <div>
+            <h3>You already guessed these...</h3>
+            <div id = "already-guessed"></div>
+        </div>
 
-    </div>
-
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
     </body>
