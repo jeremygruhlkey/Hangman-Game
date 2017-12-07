@@ -12,3 +12,7 @@
       margin: 35px;
       letter-spacing: 5px;
   }
+
+  /* var currentWord = document.getElementById("current-word").innerHTML.split("");
+  currentWord[i] = letter;
+  document.getElementById("current-word") = currentWord.join(""); */
