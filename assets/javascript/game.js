@@ -1,11 +1,14 @@
 // Array of words for game to chose from (an array of arrays)
-var wordLibrary = [ "this", "that", "those", "sometimes", "never", "always", "buffoon", "Pennywise" ];
+var wordLibrary = [ "this", "that", "those", "sometimes", "never", "always", "buffoon", "pennywise" ];
 // An empty array to push incorrect guesses to
 var alreadyGuessed = []
 // sets starting guess limit to 6
 var guessesRemaining = 6
 // declares currentWord variable
 var currentWord=""
+
+var winCounter = 0;
+var lossCounter = 0;
 
 function gameStart() {
     // Establishes that the word has not been completed by guesses, will check against in later functions
@@ -36,8 +39,10 @@ function isLetterInWord(letter) {
                         document.getElementById("current-word").innerHTML = old.join("");
                     }
                     if (document.getElementById("current-word").innerHTML.indexOf("_") < 0) {
+                        winCounter = winCounter + 1;
                         alert("you win!");
                         wordFinished = true;
+                        gameStart();
                     }
                 }
             // }
@@ -46,7 +51,9 @@ function isLetterInWord(letter) {
             guessesRemaining = guessesRemaining - 1;
             document.getElementById("guesses-remaining").innerHTML = guessesRemaining;            
             if (guessesRemaining < 1) {
-                alert("You lose! The word was " + "" + currentWord + "");
+                losseCounter = lossCounter + 1;
+                alert("You lose! The word was " + "'" + currentWord + "'");
+                gameStart();
             }
             else {
                 alreadyGuessed.push(letter);
