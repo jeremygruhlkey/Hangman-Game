@@ -43,12 +43,20 @@ function isLetterInWord(letter) {
             // }
         }
         else {
-            function incorrectGuess(letter) {
-
+            guessesRemaining = guessesRemaining - 1;
+            document.getElementById("guesses-remaining").innerHTML = guessesRemaining;            
+            if (guessesRemaining < 1) {
+                alert("You lose! The word was " + "" + currentWord + "");
+            }
+            else {
+                alreadyGuessed.push(letter);
+                document.getElementById("already-guessed").innerHTML = alreadyGuessed;
             }
         }
-    }
-  };  
+        }
+        };
+    
+    
 
 
 
