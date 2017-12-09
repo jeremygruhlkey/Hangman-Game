@@ -1,9 +1,10 @@
 // Array of words for game to chose from (an array of arrays)
 var wordLibrary = [ "this", "that", "those", "sometimes", "never", "always", "buffoon", "pennywise" ];
-// An empty array to push incorrect guesses to
-var alreadyGuessed = []
+
 // sets starting guess limit to 6
 var guessesRemaining = 6
+// An empty array to push incorrect guesses to
+var alreadyGuessed = []
 // declares currentWord variable
 var currentWord=""
 
@@ -13,6 +14,7 @@ var lossCounter = 0;
 function gameStart() {
     // Establishes that the word has not been completed by guesses, will check against in later functions
     wordFinished = false;
+    
     // currentWord to play gets assigned a random index from wordLibrary
     currentWord = wordLibrary[Math.floor(Math.random() * wordLibrary.length)];
     
@@ -27,6 +29,7 @@ function gameStart() {
 
 // function checks if letter is in currentWord...
 function isLetterInWord(letter) {
+    
     if (guessesRemaining > 0 && wordFinished != true) {
         if (currentWord.indexOf(letter) > -1) {
             // function correctGuess(letter) {
@@ -42,17 +45,25 @@ function isLetterInWord(letter) {
                         winCounter = winCounter + 1;
                         alert("you win!");
                         wordFinished = true;
+                        guessesRemaining = 6;
+                        alreadyGuessed = [];
+                        document.getElementById("already-guessed").innerHTML = alreadyGuessed;
+                        document.getElementById("games-won").innerHTML = winCounter;
                         gameStart();
                     }
                 }
             // }
         }
-        else {
+        else{
             guessesRemaining = guessesRemaining - 1;
             document.getElementById("guesses-remaining").innerHTML = guessesRemaining;            
             if (guessesRemaining < 1) {
-                losseCounter = lossCounter + 1;
+                lossCounter = lossCounter + 1;
                 alert("You lose! The word was " + "'" + currentWord + "'");
+                guessesRemaining = 6;
+                alreadyGuessed = [];
+                document.getElementById("already-guessed").innerHTML = alreadyGuessed;
+                document.getElementById("games-lost").innerHTML = lossCounter;
                 gameStart();
             }
             else {

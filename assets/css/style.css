@@ -13,6 +13,10 @@
       letter-spacing: 5px;
   }
 
+  .word-box {
+      border: 2px;
+      border-style: solid;
+  }
   /* var currentWord = document.getElementById("current-word").innerHTML.split("");
   currentWord[i] = letter;
   document.getElementById("current-word") = currentWord.join(""); */
