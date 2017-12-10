@@ -1,5 +1,6 @@
 // Array of words for game to chose from (an array of arrays)
-var wordLibrary = [ "this", "that", "those", "sometimes", "never", "always", "buffoon", "pennywise" ];
+var wordLibrary = [ "this", "that", "those", "sometimes", "never", "always", "buffoon", "pennywise",
+"football", "game", "computer", "fubar", "console", "remote", "pillow", "library" ];
 // sets starting guess limit to 6
 var guessesRemaining = 6
 // An empty array to push incorrect guesses to
