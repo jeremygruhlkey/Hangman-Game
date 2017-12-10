@@ -14,27 +14,46 @@
 
 
 <body>
-    
+    <div class = "header-container">
+        <header>
+            <img src="assets/images/hangman.jpg">
+        </header>
+    </div>
+
+    <div class = "word-emoji-remaining-container">
        <div class = "word-box">
             <h3>Guess this Word!</h3>
             <div id = "current-word"></div>
        </div>
-       <div>
-            <h3>Guesses Remaining</h3>
-                <div id = "guesses-remaining"></div>
+
+       <div class = "emoji-box">
+            <img id = "emoji" >
+       </div>
+
+       <div class= "guess-box">
+            <h3>You will die in:</h3>
+            <div id = "guesses-remaining"></div>
+            <h3>more misses!</h3>
         </div>
-        <div>
-            <h3>You already guessed these...</h3>
+    </div>
+
+    <div class = "guessed-lost-win-container"> 
+        <div class = "guessed-box">
+            <h3>You've guessed:</h3>
             <div id = "already-guessed"></div>
         </div>
-        <div>
-            <h3>Games you've lost!</h3>
+     
+        <div class = "lost-box">
+            <h3>You've lost:</h3>
             <div id = "games-lost"></div>
-        </div>
-        <div>
-            <h3>Games you obviously CHEATED! (aka "won")</h3>
-            <div id = "games-won"></div>
+            <h3>games!</h3>
         </div>
 
+        <div class = "won-box">
+            <h3>You've won:</h3>
+            <div id = "games-won"></div>
+            <h3>games!!</h3>
+        </div>
+    </div>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
     </body>
